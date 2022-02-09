@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Engineering</title>
+    <link rel="stylesheet" href="../Files/style.css">
+    <link rel="stylesheet" href="../Files/prism.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+    <a href="../index.html" class="logo">Web<span>Engineering</span>
+        <img src="../images/code.png" class="white-filter" style="width:2.3rem;height:inherit;"/>
+    </a>
+    <nav class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="HTML.html">HTML</a>
+        <a href="JavaScript.html">JavaScript</a>
+        <a href="#" id="btn-dark">Dark Mode off</a>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+</header>
+
+    <div class="container">
+        <h5 class="heading1" style="color: white; background-color: red">HTML</h5>
+        <p><strong>HTML</strong> stands for HyperText Markup Language.HTML is the standard markup language for documents
+            designed to be displayed in a web browser. </p>
+
+        <p><strong class="outputh">Syntax : </strong></p>
+        <pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <div class="heading2">
+            <h3>&lt;head&gt; &lt;/head&gt; | Head Tag </h3>
+        </div>
+        <p><code class="markcode">&lt;head&gt;</code>tag contains metadata (document title, character set, styles,
+            links, scripts), specific information about the web page that is not displayed to the user. Metadata
+            provides browsers and search engines with technical information about the web page.</p>
+        <pre class="language-html"><code class="language-html">&lt;head&gt;&lt;/head&gt;</code></pre>
+
+
+        <div class="heading2">
+            <h3>&lt;title&gt; &lt;/title&gt; | Title Tag</h3>
+        </div>
+        <p><code class="markcode">&lt;title&gt;</code>tag defines the title of the document. The title must be
+            text-only, and it is shown in the browser's title bar or in the page's tab.It is most important for search
+            engine optimization(SEO).</p>
+        <pre class="language-html"><code class="language-html">&lt;title&gt;Title Page &lt;/title&gt;</code></pre>
+
+        <div class="heading2">
+            <h3>&lt;body&gt; &lt;body&gt; | Body Tag </h3>
+        </div>
+        <p><code class="markcode">&lt;body&gt;</code> ag defines the main content of an HTML document which displays on
+            the browser. It can contain text content, paragraphs, headings, images, tables, links, videos, etc. </p>
+        <pre class="language-html"><code class="language-html">&lt;body&gt; &lt;body&gt;</code></pre>
+
+        <div class="Short-head">
+            <h3>HTML Tag Attributes</h3>
+        </div>
+        <p><code class="markcode">color=&quot;&quot;</code> attribute is change the color of text.</p>
+        <p><code class="markcode">bgColor=&quot;&quot;</code> attribute is change the background color of text.</p>
+        <p><code class="markcode">width=&quot;&quot;</code> attribute is the set the width(length) of element.</p>
+        <p><code class="markcode">height=&quot;&quot;</code> attribute is used for set the height of element.</p>
+        <!-- <p><code class="markcode">=&quot;&quot;</code></p> -->
+
+        <div class="heading2">
+            <h3>&lt;a&gt; &lt;/a&gt; | HyperLink Tag</h3>
+        </div>
+        <p>this tag name is hyperlink, and it is used to link the other document or file.&lt;a&gt; tag defines a
+            hyperlink, which is used to link from one page to another.</p>
+        <pre class="language-html"><code class="language-html">//target = "_blank"," _parent","_self"," _top";
+&lt;a href=&quot;url&quot; target="_blank" &gt;&lt;/a&gt;</code></pre>
+
+        <div class="heading2">
+            <h3>&lt;img&gt; &lt;/img&gt; | Image Tag </h3>
+        </div>
+        <p><code class="markcode">&lt;img&gt;</code> tag is used to embed an image in an HTML page.</p>
+        <p><strong class="outputh">Attributes :</strong></p>
+        <p><code class="markcode">src </code>Specifies the path to the image.</p>
+        <p><code class="markcode">alt </code> name of image,that help in seo.</p>
+        <pre
+            class="language-html"><code class="language-html">&lt;img src=&quot;img_girl.jpg&quot; alt=&quot;Girl in a jacket&quot;/&gt;</code></pre>
+
+        <div class="heading2">
+            <h3>&lt;table&gt; &lt;/table&gt; | Table Tag</h3>
+        </div>
+        <p><code class="markcode">&lt;table&gt;</code> tag is used make the table in the doucment.</p>
+        <p><code class="markcode">border="1"</code> attribute is used for the border of table.</p>
+        <p><code class="markcode">&lt;caption&gt;</code>tag defines a table caption.caption is the display name of
+            table.</p>
+        <p><code class="markcode">&lt;tbody&gt;</code>tag is used to group the body content in an HTML table.</p>
+        <p><code class="markcode">&lt;tr&gt;</code>tag is used for table row.</p>
+        <p><code class="markcode">&lt;th&gt;</code>tag is used for table height.</p>
+        <p><code class="markcode">&lt;td&gt;</code>tag is used for table data.</p>
+        <p><code class="markcode">&lt;tfoot&gt;</code>tag is used to group footer content in an HTML table.</p>
+
+
+        <pre class="language-html"><code class="language-html">&lt;table border=&quot;1&quot; &gt;
+    &lt;caption&gt;Table Name&lt;/caption&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Heading 1&lt;/th&gt;
+            &lt;th&gt;Heading 2&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;column 1&lt;/td&gt;
+            &lt;td&gt;column 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+        &lt;tfoot&gt;  
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+
+        <p><code class="markcode">colspan = &quot;2&quot;</code>The value of the colspan attribute represents the number
+            of columns to span.</p>
+        <p><code class="markcode">rowspan = &quot;2&quot;</code>The value of the rowspan attribute represents the number
+            of rows to span.</p>
+
+        <div class="heading2">
+            <h3> &lt;font&gt;&lt;/font&gt; | Font Tag
+                <span style="float:right; margin-right:15px;">
+                    Not Supported in HTML 5
+                </span>
+            </h3>
+        </div>
+        <p><code class="markcode">color=&quot;&quot;</code> used for color of the text change.</p>
+        <p><code class="markcode">face=&quot;&quot;</code> attribute is used for change the font family of text.</p>
+        <p><code class="markcode">size=&quot;&quot;</code> attribute is used increase the size of text.</p>
+        <pre
+            class="language-html"><code class="language-html">&lt;font color=&quot;red&quot; face=&quot;Verdana,sans-serif&quot; size=&quot;+1&quot;&gt;Text...&lt;/font&gt;</code></pre>
+
+
+        <!-- 
+<div class="heading2">
+  <h3>  </h3>
+</div>
+<p><code class="markcode"></code></p>
+<pre class="language-html"><code class="language-html"></code></pre>
+ 
+ -->
+
+        <h5 class="heading1" style="color: white; background-color: red">Tomcat Path</h5>
+        <p>Download the Apache Tomcat Server or other option is Xampp Server</p>
+        <div class="heading2">
+            <h3> Set Path </h3>
+        </div>
+        <p>Paste the zip file on <code class="markcode">C:\</code> drive and extract the folder.After Extract the Folder
+            Set Following Path.</p>
+
+        <pre class="language-javascript line-numbers" data-line="1,3,5,8"><code class="language-javascript match-braces" >Set the JAVA_HOME variable
+C:\program Files\java\jdk-17
+Set the CATALINA_HOME variable
+D:\xampp\tomcat
+Set the CLASSPATH variable
+C:\D:\xampp\tomcat\lib\tomcat\servlet-api.jar;.
+D:\xampp\tomcat\lib\tomcat\jsp-api.jar
+Test the Server
+</code></pre>
+
+        <div class="heading2">
+            <h3> Manager App </h3>
+        </div>
+        <p> When you click on the <code class="markcode">Manager App</code> on the Home page of Tomcat,they
+            should say user name or password to enter then you open the Tomcat installation folder then open
+            <code class="markcode">D:\xampp\tomcat\conf</code> then open <code class="markcode">tomcat-users.xml</code>
+            to replace all the code with blow code.Then you enter the username and passwork in the tomact then they
+            work.
+        </p>
+        <pre class="language-xml "><code class="language-xml match-braces" >&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;tomcat-users&gt;
+  &lt;role rolename=&quot;admin-gui&quot;/&gt;
+  &lt;role rolename=&quot;admin-script&quot;/&gt;
+  &lt;role rolename=&quot;manager-gui&quot;/&gt;
+  &lt;role rolename=&quot;manager-status&quot;/&gt;
+  &lt;role rolename=&quot;manager-script&quot;/&gt;
+  &lt;role rolename=&quot;manager-jmx&quot;/&gt;
+  &lt;user name=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;admin-gui,admin-script,manager-gui,manager-status,manager-script,manager-jmx&quot;/&gt;
+&lt;/tomcat-users&gt;</code></pre>
+
+
+
+
+
+
+
+        <!--
+<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+<span class="marku"></span>
+
+<div class="heading2">
+	<h3>  </h3>
+</div>
+<p><code class="markcode"></code></p>
+<pre  class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+
+<h5 class="outputh">Output :</h5>
+<pre class="output">  30</pre>
+
+ <ul>
+    <li></li>
+  </ul>
+     -->
+
+
+    </div>
+    <!--
+
+
+    <footer>
+        <p>Design By Hassan Ali</p>
+    </footer>
+
+-->
+    <script src="../Files/javaScript.js"></script>
+    <script src="../Files/prism.js"></script>
+    <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
