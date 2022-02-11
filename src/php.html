@@ -1498,35 +1498,37 @@ echo $str;</code></pre>
 str_split();          // String spit into parts
 chunk_split();        // String convert into array parts
 strtolower();         // Convert String All character into UpperCase
-strtoupeer();         // Convert String All character into LowerCase
+strtoupper();         // Convert String All character into LowerCase
 ucWords();            // Covert all word character first letter capital
 ucFirst();            // Convert string into frist letter capital
 lcfirst();            // Convert the string first letter into small
+_________________________________________________________________________________
+//------------------------- PHP String Length Count Functions-------------------
 strlen();             // Count Character with space in String
 str_word_count();     // Count the words in String
 substr_count();       // Search value how much time they repeat in string
 _________________________________________________________________________________
 //------------------------- PHP Position Functions-------------------
-strpos();
-strrpos();
-stripos();
-strripos();
+strpos();             // Find Position of first occurrence of a string
+strrpos();            // Find Position of last occurrence of a string
+stripos();            // Find Position of first occurrence of a string
+strripos();           // Find Position of last occurrence of a string
 _________________________________________________________________________________
 //------------------------- String Search Functions-------------------
-strstr();
-stristr();
-strchr();
-strrchr();
-strbark();
-substr();
+strstr();             
+stristr();              
+strchr();              
+strrchr();            
+strbark();            
+substr();             
 _________________________________________________________________________________
-//------------------------- String Replace Functions-------------------
-str_replace();
-str_ireplace();
-substr_replace();
-strtr();
+//------------------------ String Find & Replace Functions-------------------
+str_replace();        // Find & Replace String (case-sensitive)   
+str_ireplace();       // Find & Replace String (case-insensitive)
+substr_replace();     // Replace Specific Part of String
+strtr();              // Replace Character on String
 _________________________________________________________________________________
-//------------------------- String compare Functions-------------------
+//------------------------- String compare Functions-----------------------
 strcmp();
 strncmp();
 strcasecmp();
@@ -1559,15 +1561,11 @@ $newString2 = chunk_split($str,4,&quot;*&quot;);
 print_r($newString1);
 print_r($newString2);</code></pre>
 
-        <p><code class="markcode">strtoupeer();     </code>convert string into uppercase.</p>
-
-        <p><code class="markcode">strtolower();     </code>convert string into lowercase.</p>
-
-        <p><code class="markcode">ucWords();        </code>covert string all word character first letter capital.</p>
-
-        <p><code class="markcode">ucFirst();        </code>convert string into frist letter capital.</p>
-
-        <p><code class="markcode">lcfirst();        </code>convert the string first letter into small</p>
+<p><code class="markcode">strtoupeer(); </code>convert string into uppercase.</p>
+<p><code class="markcode">strtolower(); </code>convert string into lowercase.</p>
+<p><code class="markcode">ucWords();    </code>covert string all word character first letter capital.</p>
+<p><code class="markcode">ucFirst();    </code>convert string into frist letter capital.</p>
+<p><code class="markcode">lcfirst();    </code>convert the string first letter into small</p>
 
         <pre class="language-php"><code class="language-php">$str = &quot;php is a scripting language&quot;;
 //convert string into uppercase
@@ -1582,44 +1580,87 @@ print ucFirst($str).&quot;\n&quot;;
 //convert the string first letter into small
 print lcfirst($str);</code></pre>
 
-        <p><code class="markcode">strlen();      </code> function is used for the count the length of character in the
-            string and also count the spaces in the strings.</p>
+<p><code class="markcode">strlen();      </code> function is used for the count the length of character in the
+string and also count the spaces in the strings.</p>
 
-        <p><code class="markcode">str_word_count(); </code> function is used to count the words in the strings.</p>
-        <pre class="language-php"><code class="language-php">$str = &quot;Hello World!&quot;;
+<p><code class="markcode">str_word_count(); </code> function is used to count the words in the strings.</p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello World!&quot;;
 // String Length count with space
 print strlen($str).&quot;\n&quot;;
 // String word count
 print str_word_count($str).&quot;\n&quot;;</code></pre>
 
-        <p><code class="markcode">substr_count();   </code>is a built-in function in PHP and is used to count the number
-            of times a substring occurs in a given string. The function also provides us with an option to search for
-            the given substring in a given range of the index. It is case sensitive, i.e., “abc” substring is not
-            present in the string “Abcab”. <br>
-            <strong>string parameter</strong> is necessary for search in the string. <br>
-            <strong>substring parameter</strong> is the search value is passed. <br>
-            <strong>start parameter</strong> is used to start the search in the string.This parameter is optional.If you
-            not enter any value then they start searching from the start(default). <br>
-            <strong>length parameter</strong> is the optional parameter that define the end where the searching is stop.
-        </p>
-        <p><strong>Syntax : </strong> <code
-                class="markcode">substr_count(string,substring,start(optional),length(optional)); or substr_count(string,searchValue);</code>
-        </p>
-        <pre class="language-php"><code class="language-php">$str = &quot;Geek for Geek&quot;;
+<p><code class="markcode">substr_count();   </code>is a built-in function in PHP and is used to count the number
+    of times a substring occurs in a given string. The function also provides us with an option to search for
+    the given substring in a given range of the index. It is case sensitive, i.e., “abc” substring is not
+    present in the string “Abcab”. <br>
+    <strong>string parameter</strong> is necessary for search in the string. <br>
+    <strong>substring parameter</strong> is the search value is passed. <br>
+    <strong>start parameter</strong> is used to start the search in the string.This parameter is optional.If you
+    not enter any value then they start searching from the start(default). <br>
+    <strong>length parameter</strong> is the optional parameter that define the end where the searching is stop.
+</p>
+<p>
+    <strong>Syntax : </strong> 
+    <code class="markcode">substr_count(string,substring,start(optional),length(optional)); or substr_count(string,searchValue);</code>
+</p>
+<pre class="language-php"><code class="language-php">$str = &quot;Geek for Geek&quot;;
 print substr_count($str,&quot;Geek&quot;).&quot;\n&quot;;</code></pre>
 
-        <!-- <div class="heading2">
-            <h3>PHP Position Functions</h3>
-        </div>
-        <p><code class="markcode">strpos();</code></p>
-        <p><strong>Syntax : </strong><code class="markcode"></code></p>
-        <p><code class="markcode">strrpos();</code></p>
-        <p><strong>Syntax : </strong><code class="markcode"></code></p>
-        <p><code class="markcode">stripos();</code></p>
-        <p><strong>Syntax : </strong><code class="markcode"></code></p>
-        <p><code class="markcode">strripos();</code></p>
-        <p><strong>Syntax : </strong><code class="markcode"></code></p>
-        <pre class="language-php"><code class="language-php"></code></pre> -->
+<div class="heading2">
+    <h3>PHP Position Functions</h3>
+</div>
+<p>The <code class="markcode">strpos();</code> function finds the position of the 
+    first occurrence of a string inside another string.</p>
+<p><strong class="outputh">Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strpos(string,find,start);</code></pre> 
+
+<p><code class="markcode">strrpos()  </code>Finds the position of the last occurrence of a string inside another string (case-sensitive)</p>
+<p><code class="markcode">stripos()  </code>Finds the position of the first occurrence of a string inside another string (case-insensitive)</p>
+<p><code class="markcode">strripos() </code>Finds the position of the last occurrence of a string inside another string (case-insensitive)</p>
+
+<div class="heading2">
+    <h3>String Find & Replace Functions</h3>
+</div>
+<p><code class="markcode">str_replace();</code>is the php function to find and replace the value in the 
+string.It is case-sensitive function.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">str_replace(find,replace,string,count(optional))</code></pre>
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
+$find = strtoupper(&quot;php&quot;); //first convert to upper then search b/c string is uppercase
+$replace_value = &quot;Python&quot;;
+print_r(str_replace($find, $replace_value, $str));</code></pre> 
+
+<p><code class="markcode">str_ireplace();</code> is the case-insensitive function.You donn't need to 
+search the value in the string using uppercase or lowercase.But in the str_replace() the both String
+or replace value will be same otherwise value cann't be replace.</p>
+<p><strong>Syntax :</p>
+<pre class="language-php"><code class="language-php">str_ireplace(find,replace,string,count(optional))</code></pre> 
+<p><strong>Example :</p>
+<pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
+$find = &quot;php&quot;;
+$replace_value = &quot;Python&quot;;
+print_r(str_ireplace($find, $replace_value, $str));</code></pre> 
+    
+<p><code class="markcode">substr_replace();</code> is used to replace the specific part of the string.</p>
+<p><strong>Syntax : </strong>/p>
+<pre class="language-php"><code class="language-php">substr_replace(string,replacement,start,length(optional))</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$string = &quot;PHP is a general-purpose scripting language&quot;;
+$replace_String = &quot;Hassan Ali&quot;;
+$start = 4;
+print_r(substr_replace($string, $replace_String, $start));</code></pre> 
+
+
+        <!-- 
+<div class="heading2">
+    <h3></h3>
+</div>
+<p><code class="markcode"></code></p>
+<p><strong>Syntax : </strong><code class="markcode"></code></p>
+<pre class="language-php"><code class="language-php"></code></pre> 
+    -->
 
 <div class="heading1" style="background-color: red;color:white;">
     <h3> PHP Super Global Variables</h3>
