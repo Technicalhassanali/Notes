@@ -1550,11 +1550,12 @@ rtrim();              // Right Side Trim
 ltrim();              // Left Side Trim
 chop();               // Work Same as rtrim();
 _________________________________________________________________________________
-//------------------------- PHP String Functions --------------------------------
-
+//------------------------- PHP String Slash Functions For DB Security-----------
+addslashes();        // Add Slashes before string quotes
+stripslashes();      // Remove Slashes 
 </code></pre>
 
-
+    
 <div class="heading2">
     <h3>String Functions</h3>
 </div>
@@ -1833,6 +1834,61 @@ echo &quot;\n&quot;;
 echo rtrim($str,&quot;Ali&quot;);
 echo &quot;\n&quot;;
 echo chop($str,&quot;Ali&quot;);</code></pre> 
+
+   
+
+
+<div class="heading2">
+    <h3>Slashes</h3>
+</div>
+<p><code class="markcode">addslashes();</code> function is used to add the Slashes in the String, for 
+better Security to hide the data from sql injection.</p>
+<p><code class="markcode">stripslashes(); </code> function is used to remove the slashes when the data 
+is get from the database.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">addslashes($string); //add slashes
+stripslashes($string); //remove slashes</code></pre> 
+    
+    <p><strong>Example : </strong></p>
+<p>Slashes is work in the string within single quotes or double quotes before.</p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hi,'Hassan Ali'&quot;;
+$newStr =  addslashes($str);
+echo $newStr.&quot;\n&quot;;
+echo stripslashes($newStr);</code></pre> 
+<hr>
+
+<p><code class="markcode">addcslashes();</code> function not need to single or double quotes within 
+string.If you add the slashes before specific character that you define in string the slashes add,
+we can add multiple slashes before multiple character.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">addcslashes($string,'character');</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">    $str = &quot;Hi,Hassan Ali&quot;;
+    //Add slashes before H in String
+    echo addcslashes($str,&quot;H&quot;);
+    echo &quot;\n&quot;;
+    //Add Slashes Before H,a in String
+    echo addcslashes($str,&quot;Ha&quot;);
+    echo &quot;\n&quot;;
+    //Add All UpperCase Letter Before Slashes
+    echo addcslashes($str,&quot;A..Z&quot;);
+    echo &quot;\n&quot;;
+    /*if we add small letter before slashes then use but not add before capital only
+    lower letter before add slashes */
+    echo addcslashes($str,&quot;a..z&quot;);
+    echo &quot;\n&quot;;
+    /*if specific character length character then used */
+    echo addcslashes($str,&quot;a..d&quot;);</code></pre> 
+
+<p><code class="markcode">stripcslashes();</code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">stripcslashes($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hi \Hassan Ali&quot;;
+    echo stripcslashes($str);
+/* Method 02 */
+$addSlashes = addcslashes($str,'a..z');
+echo stripslashes($addSlashes);</code></pre> 
 
 <!-- 
 <div class="heading2">
