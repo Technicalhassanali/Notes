@@ -1493,8 +1493,8 @@ print_r(explode(&quot; &quot;,$a,-2));</code></pre>
 $str = implode(&quot;-&quot;,$a);
 echo $str;</code></pre>
 
-        <h5 class="heading1" style="color: white; background-color: red">PHP String Functions</h5>
-        <pre class="language-php"><code class="language-php line-numbers">//------------------------- String Functions-------------------
+<h5 class="heading1" style="color: white; background-color: red">PHP String Functions</h5>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">//------------------------- String Functions-------------------
 str_split();          // String spit into parts
 chunk_split();        // String convert into array parts
 strtolower();         // Convert String All character into UpperCase
@@ -1508,13 +1508,13 @@ strlen();             // Count Character with space in String
 str_word_count();     // Count the words in String
 substr_count();       // Search value how much time they repeat in string
 _________________________________________________________________________________
-//------------------------- PHP Position Functions-------------------
+//------------------------- PHP Position Functions------------------------------
 strpos();             // Find Position of first occurrence of a string
 strrpos();            // Find Position of last occurrence of a string
 stripos();            // Find Position of first occurrence of a string
 strripos();           // Find Position of last occurrence of a string
 _________________________________________________________________________________
-//------------------------- String Search Functions-------------------
+//------------------------- String Search Functions----------------------------
 strstr();             
 stristr();              
 strchr();              
@@ -1522,40 +1522,54 @@ strrchr();
 strbark();            
 substr();             
 _________________________________________________________________________________
-//------------------------ String Find & Replace Functions-------------------
+//------------------------ String Find & Replace Functions--------------------
 str_replace();        // Find & Replace String (case-sensitive)   
 str_ireplace();       // Find & Replace String (case-insensitive)
 substr_replace();     // Replace Specific Part of String
 strtr();              // Replace Character on String
 _________________________________________________________________________________
-//------------------------- String compare Functions-----------------------
-strcmp();
-strncmp();
-strcasecmp();
-strncasecmp();
-substr_compare();
-similiar_text();
+//------------------------- String compare Functions---------------------------
+strcmp();             // Two string (case-sensitive)
+strncmp();            // Two string spacific character length(case-sensitive)
+strcasecmp();         // Two string (case-insensitive)
+strncasecmp();        // Two string spacific character length(case-insensitive)
+substr_compare();     // Two string specific part of string
+similiar_text();      // Return percentage character of two string match 
 _________________________________________________________________________________
-//------------------------- String Reverse &amp; suffle-------------------
-strrev();
-str_shuffle();</code></pre>
+//------------------------- String Reverse &amp; suffle-------------------------
+strrev();             // Reverse String Character
+str_shuffle();        // Random Shuffle the String Character
+_________________________________________________________________________________
+//------------------------- PHP String Repeat Functions -------------------------
+str_pad();                
+str_repeat();         //  Used to Repeat the String multiple time
+_________________________________________________________________________________
+//------------------------- PHP String Trim Functions ---------------------------
+trim();               // Trim left &amp; Right Both Side
+rtrim();              // Right Side Trim
+ltrim();              // Left Side Trim
+chop();               // Work Same as rtrim();
+_________________________________________________________________________________
+//------------------------- PHP String Functions --------------------------------
+
+</code></pre>
 
 
-        <div class="heading2">
-            <h3>String Functions</h3>
-        </div>
-        <p><code class="markcode">str_split();      </code> is used to convert the given string into an array.</p>
-        <p><strong>Syntax : </strong> <code class="markcode">str_split(array,LimitCharacter(optional));</code></p>
-        <pre class="language-php"><code class="language-php">$str = &quot;Hello Hassan&quot;;
+<div class="heading2">
+    <h3>String Functions</h3>
+</div>
+<p><code class="markcode">str_split();      </code> is used to convert the given string into an array.</p>
+<p><strong>Syntax : </strong> <code class="markcode">str_split(array,LimitCharacter(optional));</code></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello Hassan&quot;;
 $newArray = str_split($str);
 $newArrayLimit = str_split($str,5);
 print_r($newArray);
 print_r($newArrayLimit);</code></pre>
 
-        <p><code class="markcode">chunk_split();    </code>is used to split the given input string into small chunks of
-            defined length.</p>
-        <p><strong>Syntax : </strong> <code class="markcode">string chunk_split($string, $length, $end);</code></p>
-        <pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
+<p><code class="markcode">chunk_split();    </code>is used to split the given input string into small chunks of
+    defined length.</p>
+<p><strong>Syntax : </strong> <code class="markcode">string chunk_split($string, $length, $end);</code></p>
+<pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
 $newString1 = chunk_split($str,4);
 $newString2 = chunk_split($str,4,&quot;*&quot;);
 print_r($newString1);
@@ -1567,7 +1581,7 @@ print_r($newString2);</code></pre>
 <p><code class="markcode">ucFirst();    </code>convert string into frist letter capital.</p>
 <p><code class="markcode">lcfirst();    </code>convert the string first letter into small</p>
 
-        <pre class="language-php"><code class="language-php">$str = &quot;php is a scripting language&quot;;
+<pre class="language-php"><code class="language-php">$str = &quot;php is a scripting language&quot;;
 //convert string into uppercase
 print strtoupper($str).&quot;\n&quot;;
 //convert string into lowercase
@@ -1635,9 +1649,9 @@ print_r(str_replace($find, $replace_value, $str));</code></pre>
 <p><code class="markcode">str_ireplace();</code> is the case-insensitive function.You donn't need to 
 search the value in the string using uppercase or lowercase.But in the str_replace() the both String
 or replace value will be same otherwise value cann't be replace.</p>
-<p><strong>Syntax :</p>
+<p><strong>Syntax :</strong></p>
 <pre class="language-php"><code class="language-php">str_ireplace(find,replace,string,count(optional))</code></pre> 
-<p><strong>Example :</p>
+<p><strong>Example :</strong></p>
 <pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
 $find = &quot;php&quot;;
 $replace_value = &quot;Python&quot;;
@@ -1653,14 +1667,184 @@ $start = 4;
 print_r(substr_replace($string, $replace_String, $start));</code></pre> 
 
 
-        <!-- 
+<div class="heading2">
+    <h3>String compare Functions</h3>
+</div>
+<p>
+    If we compare two Strings then it will return two resutls.First 0 and other is less then 
+    zero (&lt;0) negative value,third is the greater then (&gt;0) positive value.
+</p>
+
+<pre class="language-php line-numbers"><code class="language-php  line-numbers">strcmp(string1,string2);              // case-sensitive
+strncmp(string1,string2,length);      // case-sensitive
+strcasecmp(string1,string2);          // case-insensitive 
+strncasecmp(string1,string2,length);  // case-insensitive </code></pre> 
+
+<p><code class="markcode">strcmp(string1,string2);</code> is the case sensitive Functions.It means
+that if we have two strings s1 = "hello"; s2 = "Hello"; both are different to each other.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strcmp(string1,string2);</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">/*if it return positive then mean left side string is larger then right side string.*/
+    $string1 = &quot;Hello World&quot;;
+    $string2 = &quot;Hello World&quot;;
+    $string3 = &quot;Hello world&quot;;
+    // return b/c both match
+    echo strcmp($string1,$string2);
+    echo &quot;\n&quot;;
+    // return -1 b/c case-sensitive
+    echo strcmp($string1,$string3);</code></pre> 
+
+<p><code class="markcode">strncmp();</code>is function is used to compare 
+the limited number of character in the strings.It work in the strcmp(); function both are case-sensitive
+functions.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strncmp(string1,string2,length);
+// Length : how much character compare</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$string1 = &quot;Hello World&quot;;
+$string3 = &quot;Hello world&quot;;
+echo strncmp($string1,$string3,6);</code></pre> 
+ 
+<p><code class="markcode">strcasecmp();</code>It is the case case-insensitive function,
+and working is same as strcmp(); but it not puority to the upperCase() or lowerCase() letter.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strcasecmp(string1,string2);</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo strcasecmp(&quot;HELLO world&quot;,&quot;hello world&quot;);
+// return 0 b/c it same character and it is case-insensitive function</code></pre> 
+
+<p><code class="markcode">strncasecmp();</code> is case-insensitive function,
+and work same as strncmp(); but it campare the spacific character of the strings.It compare limited
+string characters.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strncasecmp(string1,string2,length);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo strncasecmp(&quot;hello World&quot;,&quot;Hello World&quot;,6);</code></pre> 
+
+<p><code class="markcode">substr_compare();</code> function is used when we campare two strings
+,the both string take the spacific part of string to compare. <br> if we have the two 
+string s1 = &quot;Hello <span style=color:red;">world</span>&quot;, s2=&quot;Hello <span style=color:red;">WORLD</span>&quot;</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">substr_compare(string1,string2,start,length(optional),case(optional:false/true));
+//length - Optional : otherwise take start to complete string
+//case - if you add true then they work as case-insensitive</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo substr_compare(&quot;Hello World&quot;,&quot;World&quot;,6,);</code></pre> 
+
+<p><code class="markcode">similiar_text();</code> function is compare the string character and 
+show the percentage. How much character should be matched on both strings.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">similiar_text(string1,string2,percent(optional));</code></pre> 
+<pre class="language-php"><code class="language-php">echo similar_text(&quot;Hi Hassan&quot;,&quot;Hassan Ali&quot;);
+// Return Percenatage
+similar_text(&quot;Hi Hassan&quot;,&quot;Hassan Ali&quot;,$pre);
+echo $pre;</code></pre> 
+
+<div class="heading2">
+    <h3>String Reverse & suffle</h3>
+</div>
+<p><code class="markcode">strrev();</code> function is used to reverse the string.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strrev($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo strrev(&quot;Hello&quot;);
+// return olleH</code></pre> 
+
+
+<p><code class="markcode">str_shuffle();</code> function is shuffle the string in random order.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">str_shuffle($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo str_shuffle("Hassan");
+// random return shuffle string character</code></pre> 
+
+<div class="heading2">
+    <h3>PHP String Repeat Functions</h3>
+</div>
+<p><code class="markcode">str_repeat();</code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">str_repeat(string,repeat);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$string = &quot;Hassan Ali &quot;;
+echo str_repeat($string,3);</code></pre> 
+
+<div class="heading2">
+    <h3>PHP String Trim Functions</h3>
+</div>
+<p>Basically Trim Function is used in the form to remove the extra space when user input the text or
+    anything in form box.
+</p>
+<p><code class="markcode">trim();</code> function is remove the left or right side match character or string.if you
+Enter those character that not present in the left and right side then they not effect on it, and they 
+work with every character List.
+</p>
+<div class="success size">
+    <p><strong> Note: </strong> if you remove the space around string the 
+        you donn't need to write second parameter in trim(),ltrim(),rtrim(),chop(). Only pass string then they
+        remove the space. like <br>
+        <code class="markcode">$a = "  Hi, Hassan "; trim($a); </code> it remove both left and right space.
+    </p>
+</div>
+
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">trim(string,charlist);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan Ali&quot;;
+echo $str .&quot;\n&quot;;
+//remove the end i from ali
+echo trim($str,&quot;i&quot;);
+echo &quot;\n&quot;;
+//remove H from Hassan Left side
+echo trim($str,&quot;H&quot;);
+echo &quot;\n&quot;;
+//remove Hassan + space
+echo trim($str,&quot;Hassan &quot;);
+echo &quot;\n&quot;;
+/*first check h then they remove h from left side,then check a that on left side 
+remove a then go to right the Ali is complete match.*/
+echo trim($str,&quot;HaAli&quot;);
+
+//Remove Extra space around string
+$a = &quot; Hi, Hassan &quot;; 
+echo trim($a);</code></pre> 
+
+<p><code class="markcode">ltrim()</code> function is remove the 
+    left side character or space.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">ltrim(string,charlist);</code></pre> 
+
+<p><code class="markcode">rtrim()</code>function is remove 
+    the right side character or space.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">rtrim(string,charlist);</code></pre> 
+
+<p><code class="markcode">chop()</code> work same as rtrim(); right side trim the character.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">chop(string,charlist);</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan  Ali&quot;;
+echo ltrim($str,&quot;Ali&quot;);
+echo &quot;\n&quot;;
+echo rtrim($str,&quot;Ali&quot;);
+echo &quot;\n&quot;;
+echo chop($str,&quot;Ali&quot;);</code></pre> 
+
+<!-- 
 <div class="heading2">
     <h3></h3>
 </div>
 <p><code class="markcode"></code></p>
-<p><strong>Syntax : </strong><code class="markcode"></code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php"></code></pre> 
+<p><strong>Example : </strong></p>
 <pre class="language-php"><code class="language-php"></code></pre> 
     -->
+
 
 <div class="heading1" style="background-color: red;color:white;">
     <h3> PHP Super Global Variables</h3>
