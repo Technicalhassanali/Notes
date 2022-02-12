@@ -1553,9 +1553,9 @@ ________________________________________________________________________________
 //------------------------- PHP String Slash Functions For DB Security-----------
 addslashes();        // Add Slashes before string quotes
 stripslashes();      // Remove Slashes 
-</code></pre>
+addcslashes();       // Add Slashes between specific character
+stripcslashes();     // Remove Slashes</code></pre>
 
-    
 <div class="heading2">
     <h3>String Functions</h3>
 </div>
@@ -1835,9 +1835,6 @@ echo rtrim($str,&quot;Ali&quot;);
 echo &quot;\n&quot;;
 echo chop($str,&quot;Ali&quot;);</code></pre> 
 
-   
-
-
 <div class="heading2">
     <h3>Slashes</h3>
 </div>
@@ -1880,7 +1877,8 @@ we can add multiple slashes before multiple character.</p>
     /*if specific character length character then used */
     echo addcslashes($str,&quot;a..d&quot;);</code></pre> 
 
-<p><code class="markcode">stripcslashes();</code></p>
+<p><code class="markcode">stripcslashes();</code> function is remove the 
+    slashes of addcslashes() function but the stripslashes() is working same as to remove slahes.</p>
 <p><strong>Syntax : </strong></p>
 <pre class="language-php"><code class="language-php">stripcslashes($string);</code></pre> 
 <p><strong>Example : </strong></p>
@@ -1889,6 +1887,146 @@ we can add multiple slashes before multiple character.</p>
 /* Method 02 */
 $addSlashes = addcslashes($str,'a..z');
 echo stripslashes($addSlashes);</code></pre> 
+
+<div class="heading1" style="background-color: red;color:white;">
+    <h3> PHP HTML Tag Encode</h3>
+</div>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">//------------------------- PHP Entity Functions --------------------------------
+htmlentities();            // convert html code into entity code
+html_entity_decode();      // convert entity code to html code
+htmlspecialchars();        // encode only special character
+htmlspecialchars_decode(); // decode html special character
+get_html_translation_table(); //return Associative Array</code></pre> 
+
+<p><strong class="outputh">Special Character : </strong></p>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">    &lt;    
+    &gt;    
+    &amp;   
+    &quot;  
+    &#039;</code></pre>
+
+<div class="heading2">
+    <h3>HTML code into Entity code</h3>
+</div>
+<p>When we save the data in database using form then hacker try to paste the html code in the form for 
+    sql injection.Then we need to used the html code convert into entity code then save into database.Therefore 
+    we project himself from the sql injection.
+</p>
+<p><code class="markcode">htmlentities();</code> function is convert the html code into entity code.They convert
+the all special character(&lt;,&gt;,&amp;,&quot;,&sbquo;) into entity code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">htmlentities(string,flags);
+/*
+flags : Accept the blow type of parameter;
+ENT_COMPAT   : Will convert double-quotes and leave single-quotes alone.
+ENT_QUOTES   : Will convert both double and single quotes.
+ENT_NOQUOTES : Will leave both double and single quotes unconverted.only &lt;&gt; encode
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+echo $str.&quot;&lt;br&gt;&lt;br&gt;&quot;;
+/*only convert by default double quote and greater then or smaller then entity code 
+not encode special character*/
+echo htmlentities($str);
+/*Second parameter convert both single or double quote */
+echo htmlentities($str,ENT_QUOTES);
+/* only special Character Encode into Entity code */
+echo htmlentities($str,ENT_NOQUOTES);
+</code></pre> 
+
+<p><code class="markcode">html_entity_decode();</code> function is convert the entity code into html code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">html_entity_decode(string,flags);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+$htmlentity =  htmlentities($str,ENT_QUOTES);
+echo $htmlentity;
+echo &quot;\n&quot;;
+echo html_entity_decode($htmlentity);</code></pre> 
+<hr>
+
+<p><code class="markcode">htmlspecialchars();</code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">htmlspecialchars($string,flag);
+/*
+flags : Accept the blow type of parameter;
+ENT_COMPAT   : Will convert double-quotes and leave single-quotes alone.
+ENT_QUOTES   : Will convert both double and single quotes.
+ENT_NOQUOTES : Will leave both double and single quotes unconverted.only &lt;&gt; encode
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+echo $str.&quot;\n&quot;;
+echo htmlspecialchars($str,ENT_NOQUOTES);
+//encode all tag
+echo htmlspecialchars($str,ENT_QUOTES);</code></pre> 
+
+
+<p><code class="markcode">htmlspecialchars_decode();</code> function is used to decode the htmlspecialchars();
+function encode entity code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">htmlspecialchars_decode($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+$htmlentity =  htmlentities($str,ENT_QUOTES);
+echo $htmlentity;
+echo &quot;\n&quot;;
+echo htmlspecialchars_decode($htmlentity);</code></pre> 
+
+<div class="Short-head">
+    <h3>Check what type of code convert into Entity code</h3>
+</div>
+<p><code class="markcode">get_html_translation_table();</code> function is return the Associative Array
+that return the what kind of data they encode.</p>
+<pre class="language-php"><code class="language-php">    print_r(get_html_translation_table(HTML_SPECIALCHARS));    
+    print_r(get_html_translation_table(HTML_ENTITIES));</code></pre> 
+
+<div class="heading1" style="background-color: red;color:white;">
+    <h3>PHP Password Encryption</h3>
+</div>
+<p>When we enter the password in the form then we need to encrypt this password,if someone access the 
+    database they not know the password.
+</p>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">md5();    // Password Protection To Encrypt Data
+sha1();   // Mostly used,for Password Protection</code></pre> 
+
+<div class="Short-head">
+    <h3>md5();</h3>
+</div>
+<p><code class="markcode">md5();</code>The MD5 message-digest algorithm is a cryptographically broken 
+    but still widely used hash function producing a 128-bit hash value. Although MD5 was initially 
+    designed to be used as a cryptographic hash function, it has been found to suffer from extensive 
+    vulnerabilities.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">md5(string,raw);
+/* raw : Accept two types of parameter
+True  : Raw 16 character Binary Formate -> ��S�a��'���x�
+False : Default. 32 character Hex number -> 8b1a9953c4611296a827abf8c47804d7
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello&quot;;
+echo &quot;String : &quot;.$str.&quot;\n&quot;;
+echo  &quot;md5 Binary Formate : &quot;.md5($str,True);
+echo &quot;\n&quot;;
+echo  &quot;md5 Hexa Formate : &quot;.md5($str,False);</code></pre> 
+
+<div class="heading2">
+    <h3>sha1()</h3>
+</div>
+<p><code class="markcode">sha1()</code> function is working same as but they used the password Protection
+algorithm US Secure Hash algorithm 1.This algorithm is more secure.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">sha1(string,raw);
+/* raw : Accept two types of parameter
+True  : Raw 20 character Binary Formate -> ����{���p�Z]x^��Ы�
+False : Default. 40 character Hex number-> f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello&quot;;
+echo &quot;String : &quot;.$str.&quot;\n&quot;;
+echo  &quot;sha1 Binary Formate : &quot;.sha1($str,True);
+echo &quot;\n&quot;;
+echo  &quot;sha1 Hexa Formate : &quot;.sha1($str,False);</code></pre> 
 
 <!-- 
 <div class="heading2">
@@ -1941,7 +2079,6 @@ as public.</p>
 <pre class="language-php"><code class="language-php">&lt;pre&gt;
     &lt;?php print_r($_GET); ?&gt;
 &lt;/pre&gt;
-    
 &lt;?php
     echo $_GET['name'];
     echo &quot;&lt;br&gt;&quot;;
