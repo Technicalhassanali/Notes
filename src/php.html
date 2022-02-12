@@ -1659,7 +1659,7 @@ $replace_value = &quot;Python&quot;;
 print_r(str_ireplace($find, $replace_value, $str));</code></pre> 
     
 <p><code class="markcode">substr_replace();</code> is used to replace the specific part of the string.</p>
-<p><strong>Syntax : </strong>/p>
+<p><strong>Syntax : </strong></p>
 <pre class="language-php"><code class="language-php">substr_replace(string,replacement,start,length(optional))</code></pre> 
 <p><strong>Example : </strong></p>
 <pre class="language-php"><code class="language-php">$string = &quot;PHP is a general-purpose scripting language&quot;;
@@ -1982,13 +1982,29 @@ that return the what kind of data they encode.</p>
     print_r(get_html_translation_table(HTML_ENTITIES));</code></pre> 
 
 <div class="heading1" style="background-color: red;color:white;">
-    <h3>PHP Password Encryption</h3>
+    <h3>PHP Encryption Data</h3>
 </div>
 <p>When we enter the password in the form then we need to encrypt this password,if someone access the 
     database they not know the password.
 </p>
-<pre class="language-php line-numbers"><code class="language-php line-numbers">md5();    // Password Protection To Encrypt Data
-sha1();   // Mostly used,for Password Protection</code></pre> 
+<p>PHP <code class="markcode">sha1();</code>, <code class="markcode">md5();</code> has limit the message
+    number encrypt mean if the message is long then encrypt data is the same length(like encrypt 32 bits).
+Then we used the convert_uuencode(); and convert_uudecode(); function.</p>
+    
+<pre class="language-php line-numbers"><code class="language-php line-numbers">md5();                 // Password Protection To Encrypt Data
+sha1();                // Mostly used,for Password Protection
+//------------------------- PHP Encrypt Message --------------------------------
+convert_uuencode();    // Encrypt the Message
+convert_uudecode();    // Decrypt the Message
+//------------------------- PHP String : bin2hex &amp; hex2bin Function-------------
+bin2hex();             // convert Binary to hexadecimal Form
+hex2bin();             // convert hexadecimal to Binary form
+//------------------------- PHP chr &amp; ord Function------------------------------
+chr();                // Enter Ascii code &amp; return Character  
+ord();                // Return Ascii code when enter Character
+//------------------------- PHP String Remove Tag -------------------------------
+strip_tags();         // Remove HTML Tag From String
+wordwrap();           // Break String into Specific Length</code></pre> 
 
 <div class="Short-head">
     <h3>md5();</h3>
@@ -2028,7 +2044,190 @@ echo  &quot;sha1 Binary Formate : &quot;.sha1($str,True);
 echo &quot;\n&quot;;
 echo  &quot;sha1 Hexa Formate : &quot;.sha1($str,False);</code></pre> 
 
+    
+<div class="heading2">
+    <h3>PHP String : convert_uuencode Function </h3>
+</div>
+<p><code class="markcode">convert_uuencode()</code> function is based on uuencode Alogirthm.They encrypt the 
+message to send the database, b/c hacker not read the message.we used basically they to encrypt the message. But 
+the sha1(),md5() is used for password Encryption.In this function we decode the text but in sha1(),md5() we not 
+have the function to decode the text.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">convert_uuencode(string);</code></pre> 
+
+<p><code class="markcode">convert_uudencode()</code> function is used to decrypt the convert_uudencode() data.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">convert_uudencode($encrypt_data);</code></pre> 
+<p><strong>Example : Encrypt &amp; Decrypt Message</strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello&quot;;
+// encrypt the string
+$encodeString =  convert_uuencode($str);
+echo $encodeString.&quot;\n&quot;;
+//decode the data
+echo &quot;Decode String : &quot;.convert_uudecode($encodeString);</code></pre> 
+
+<div class="heading2">
+    <h3>PHP String : bin2hex &amp; hex2bin Function</h3>
+</div>
+<p><code class="markcode">bin2hex()</code> if php built in function that convert the ASCII Character to hexadecimal
+value.All the character in keyboard or special character in keyboard is convert into hexadecimal form.This is mostly used 
+in the security purpose that anyone not try to read this message.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">bin2hex($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan Ali&quot;;
+echo bin2hex($str);</code></pre> 
+
+<p><code class="markcode">hex2bin():</code> php built in function, they convert the hexadecimal code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">hex2bin($ASCII_Data):</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan Ali&quot;;
+$strtoHex =  bin2hex($str);
+echo $strtoHex.&quot;\n&quot;;
+echo hex2bin($strtoHex);</code></pre> 
+
+<div class="heading2">
+    <h3> PHP chr & ord Function</h3>
+</div>
+<p>Remember: Capital and Small Letter Has Different Ascii Code.</p>
+<p><code class="markcode">chr();</code> function is if you pass the ASCII code then they return the 
+character.They accept Ascii value,octal value,and hexa value as a parameter</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">chr($ASCII_Code);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = chr(66); //a aschii value
+echo $str;
+
+//Hexa value
+$str = chr(0x48); 
+echo $str;
+
+//octal value
+$str = chr(0120); 
+echo $str;</code></pre> 
+
+
+<p><code class="markcode">ord();</code> is return the ASCII_Code when you pass the character.If we enter the 
+complete world then they only take first character and return the first character Ascii code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">ord('character pass');</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = ord(&quot;A&quot;);
+echo $str;
+// return only H ascii code
+$str = ord(&quot;Hassan&quot;);
+echo $str;</code></pre> 
+
+<!-- <div class="heading2">
+    <h3></h3>
+</div> -->
+<p><code class="markcode">strip_tags();</code> is used to remove the html tag from the strings.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strip_tags($string,allow(optional));
+/*allow : parameter is used to when you allow the specific tag only then enter
+the name of the tag */</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello <br>World</b>, Hello <i> Hassan </i>&quot;;
+echo $str.&quot;\n&quot;;
+echo strip_tags($str).&quot;\n&quot;;
+// allow then they not remove b tag
+echo strip_tags($str,&quot;&lt;b&gt;&quot;);</code></pre> 
+
+
+<p><code class="markcode">wordwrap()</code> function is used to break the string into pieces.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">wordwrap($string,$width_Charcter,$break,cut);
+/* $string : enter the string Name
+$width : How much character are wrape.
+$break : is the br tag &lt;br&gt;
+$cut : True or False(Default).If you not enter True then they break word on space.
+*/
+</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;This world is beautiful.&quot;;
+echo wordwrap($str,4,&quot;<br>&quot;,True);</code></pre> 
+
+<div class="heading2">
+    <h3>PHP Math Functions</h3>
+</div>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">min();               // Return the Minimum Value
+max();               // Return the Maximum Value
+abs();               // Return Absolute Value
+floor();             // Decimal value to Base Value/Groud value
+ceil();              // Decimal Value to Round value
+round();             // Return the Round Value
+intdiv();            // integer Division
+pow();               // Power off
+sqrt();              // Find the Squre Root
+rand(min,max);       // Generate Random Number
+mt_rand(min,max);    // Mersenne Twister algorithm(4 time faster then rand())
+lcg_value();         // Return 0 &amp; 1 under value</code></pre> 
+
+<div class="heading2">
+    <h3>PHP Math Min &amp; Max Function</h3>
+</div>
+<p><code class="markcode">min()</code>function is used to find the Minimum value from the given number.
+But it work with two or more then two values only,and it is work with arrays.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">min(value1,value2....);
+                            /* Method 02 */
+min(array_value);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$value = min(22,14,68,16,3);
+    echo $value;
+/* array */
+$array_value = array(22,14,68,16,3);
+echo min($array_value);
+/* multiple Array */
+$array_value1 = array(22,14,55,16,3);
+$array_value2 = array(67,14,3,16,3);
+
+print_r(min($array_value1,$array_value2));</code></pre> 
+
+<p><code class="markcode">max()</code>function is used to find the maximum value from the given number.
+But it work with two or more then two values only,and it is work with arrays.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">max(value1,value2....);
+                            /* Method 02 */
+max(array_value);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$value = max(22,14,68,16,3);
+    echo $value;</code></pre> 
+
+<div class="Short-head">
+    <h3>intdiv()</h3>
+</div>
+<p><code class="markcode">intdiv()</code>is function the integer Division.By using this function we find 
+the any integer number divisble value.like  &nbsp; <span style='font-size:3rem;'>&#8732;</span>8 = value</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">intdiv(divident,divisor);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">// echo intdiv(division_value,divided_value);
+echo intdiv(8,4);
+echo &quot;\n&quot;;
+echo intdiv(5,2);</code></pre> 
+
+<div class="Short-head">
+    <h3>pow()</h3>
+</div>
+<p><code class="markcode">pow()</code> function is used to find the power of value like. (4)<sup>3</sup></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">pow(base,exp);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">// 4 x 4 x 4
+echo pow(4,3);</code></pre> 
+
+<div class="Short-head">
+    <h3>sqrt()</h3>
+</div>
+<p><code class="markcode">sqrt()</code> function is used to find the squre root of value. like <span style='font-size:3rem;'>&#8730;</span>4 = 2 </p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">sqrt(number);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo sqrt(9);</code></pre> 
 <!-- 
+
 <div class="heading2">
     <h3></h3>
 </div>
@@ -2037,7 +2236,8 @@ echo  &quot;sha1 Hexa Formate : &quot;.sha1($str,False);</code></pre>
 <pre class="language-php"><code class="language-php"></code></pre> 
 <p><strong>Example : </strong></p>
 <pre class="language-php"><code class="language-php"></code></pre> 
-    -->
+
+-->
 
 
 <div class="heading1" style="background-color: red;color:white;">
@@ -2430,6 +2630,7 @@ while($rows = mysqli_fetch_assoc($result)){
 &lt;?php
 }
 ?&gt;</code></pre>
+
 
 <!-- 
 <div class="heading2">
