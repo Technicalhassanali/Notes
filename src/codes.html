@@ -363,6 +363,229 @@
 
 
     <h5 class="heading1" style="color: white; background-color: red">MCQS Layout</h5>
+
+    <p><strong>CSS File</strong></p>
+<pre class="language-css"><code class="language-css">/*Accordion Style */
+  .accordion {
+  text-align: center;
+  color: white;
+  font-family: consolas;
+  width: 100%;
+  background-color: red;
+  height: 29px;
+  line-height: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  margin-top: 4px;
+  font-weight: 600;
+  border-radius: 30px;
+  }
+  .active-color,
+  .accordion:hover {
+  background-color: #130f40;
+  color: white;
+  outline: none;
+  }
+  .panel {
+  margin-top: 12px;
+  display: none;
+  background-color: blue;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+  .panel > p {
+  margin-left: 13px;
+  margin-right: 10px;
+  text-align: justify;
+  font-family: verdana;
+  color: white;
+  font-weight: 550px;
+  }
+  .heading {
+  text-align: center;
+  font-family: verdana;
+  width: 100%;
+  height: auto;
+  line-height: 27px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 2px;
+  font-size: 19px !important;
+  }
+  /*color Apply on Background and Font */
+  .blue {
+  color: white !important;
+  background-color: blue;
+  }
+  .green {
+  color: white !important;
+  background-color: green;
+  }
+  .red {
+  color: white !important;
+  background-color: red;
+  }
+  .white {
+  color: black !important;
+  background-color: aliceblue;
+  }
+  .orange {
+  color: white !important;
+  background-color: orange;
+  }
+  /* MCQs CSS Code */
+  .mcqs-ol > .box > li,
+  .mcqs-ol > .box > li,
+  .box > li {
+  font-weight: bold;
+  }
+  .mcqs-ol > .box > li > p,
+  .mcqs-ol > .box > li > p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  }
+  .mcqs-ol > .box > li > a {
+  font-family: arial;
+  line-height: 26px;
+  text-decoration: none;
+  }
+  .mcqs-ol > .box > li {
+  font-family: arial;
+  line-height: 26px;
+  text-decoration: none;
+  }
+  /* Related Post */
+  .Related-Post {
+  width: 100%;
+  background-color: #d63031;
+  color: white;
+  line-height: 35px;
+  height: 35px;
+  border-radius: 30px 0px 30px 0px;
+  font-size: 20px;
+  font-family: verdana;
+  }
+  .Related-Post-head {
+  margin-left: 18px;
+  }
+  /* KeyWord style */
+  .keywords-head {
+  text-align: center;
+  color: white !important;
+  font-family: consolas;
+  width: 100%;
+  background-color: #2c3e50;
+  height: 35px;
+  line-height: 35px;
+  font-size: 20px;
+  }
+  .write-keyword {
+  font-family: "verdana", "consolas", "arial", "cursive";
+  }
+  /* Tag Design */
+  span.tags-label {
+  display: block;
+  height: 28px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0 6px;
+  }
+  a.label-link {
+  display: block;
+  height: 28px;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 8px;
+  text-decoration: none;
+  }
+  a.label-link:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-color);
+  }
+  /* For Dark Theme */
+  .txt-color {
+  color: white;
+  }
+  .box {
+  border-radius: 8px;
+  border: 1px solid rgb(218, 220, 224);
+  break-inside: avoid;
+  margin-bottom: 12px;
+  overflow-wrap: break-word;
+  padding: 14px;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1) 0s;
+  }
+  details > summary {
+  list-style-type: " ";
+  text-align: center;
+  background-color: #f2f2f2;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  }
+  details[open] > summary {
+  list-style-type: " ";
+  background-color: red;
+  color: white;
+  }
+  details {
+  /*
+  border: 1px solid gray;
+  padding: 0.5rem;
+  */
+  border-radius: 0.2rem;
+  }
+  details[open] > summary {
+  margin-bottom: 0.5rem;
+  }
+  details > summary::before {
+  font-family: "fontawesome";
+  content: "\f06e";
+  margin: 3px;
+  }
+  details[open] > summary::before {
+  font-family: "fontawesome";
+  content: "\f070 ";
+  }
+  details > p {
+  background-color: green;
+  color: white;
+  padding: 4px 5px;
+  margin: 0;
+  }
+  .questions {
+  margin-left: 9px;
+  }
+  /* for mark the code */
+  .markcode {
+  background-color: #2b3233;
+  color: #fff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 1px 3px;
+  font-size: 18px;
+  margin: 0 5px;
+  font-family: monospace !important;
+  }
+  </code></pre>  
+  <p><strong>HTML File</strong></p> 
     <pre class="language-html "><code class="language-html match-braces" >&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
@@ -372,116 +595,233 @@
   &lt;meta name=&quot;description&quot; content=&quot;fgf&quot; /&gt;
   &lt;meta name=&quot;keywords&quot; content=&quot;gf&quot; /&gt;
   &lt;meta name=&quot;author&quot; content=&quot;Hassan Ali&quot; /&gt;
- &lt;style&gt;
-    h3 {
-      text-align: left;
-      font-size: 16pt;
-    }
-
-    p {
-      font-size: 14pt;
-      color: black;
-      font-family: arial;
-    }
-    li{
-    font-weight:bold;
-    }
-
-    h1 {
-      color: green;
-      font-family: verdana;
-    }
-
-    body&gt;div&gt;h3 {
-      margin-right: 40px;
-    }
-
-    ul&gt;li&gt;a {
-      font-size: 14pt;
-      color: black;
-      font-family: arial;
-      line-height: 26px;
-      text-decoration: none;
-    }
-    ol&gt;li {
-      font-size: 14pt;
-      color: black;
-      font-family: arial;
-      line-height: 26px;
-      text-decoration: none;
-    }
-    .button {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-    }
-  &lt;/style&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;h1 class=&quot;heading&quot; style=&quot;color:white;&quot;&gt;  &lt;!--Blue Heading Text--&gt; &lt;/h1&gt;
-  
-  
-&lt;ol type=&quot;1&quot;&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;li&gt; &lt;/li&gt;
-  &lt;/ol&gt;
+&lt;h1 class=&quot;heading blue&quot;&gt;&lt;/h1&gt;
 
-&lt;script&gt;
-var acc = document.getElementsByClassName(&quot;accordion&quot;);
-var i;
+    &lt;ol type=&quot;1&quot; class=&quot;mcqs-ol&quot;&gt;
 
-for (i = 0; i &lt; acc.length; i++) {
-  acc[i].addEventListener(&quot;click&quot;, function() {
-    this.classList.toggle(&quot;active&quot;);
-    var panel = this.nextElementSibling;
-    if (panel.style.display === &quot;block&quot;) {
-      panel.style.display = &quot;none&quot;;
-    } else {
-      panel.style.display = &quot;block&quot;;
-    }
-  });
-}
-      
-        
-&lt;/script&gt;
- 
-  &lt;!--ADS Start--&gt;
-  
-  &lt;!--ADS END--&gt;
-   &lt;hr&gt;
-  &lt;!-- image Area Start --&gt;
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-  &lt;!-- image Area End --&gt;
-  &lt;hr&gt;
-  &lt;div class=&quot;triangle-right&quot;&gt;
-&lt;span class=&quot;hasssan&quot;&gt;Related Posts:&lt;/span&gt;
-&lt;/div&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt; &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;hr&gt;
-  &lt;/ul&gt;
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-   &lt;!--SPEED ADS Start--&gt;
-  
-  &lt;!--SPEED ADS END--&gt;
-  
-  &lt;h5 class=&quot;keywords&quot;&gt;Keywords:&lt;/h5&gt;
-  &lt;p style=&quot;font-family: verdana,consolas,arial,cursive;&quot;&gt;
-&lt;/p&gt;
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/ol&gt;
+
+    &lt;ul class=&quot;mcqs-ul&quot;&gt;&lt;/ul&gt;
+
+    &lt;hr /&gt;
+    &lt;div class=&quot;Related-Post&quot;&gt;
+        &lt;span class=&quot;Related-Post-head&quot;&gt;Related Posts:&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;ul class=&quot;mcqs-ul&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt; &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt; &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;hr /&gt;
+    &lt;/ul&gt;
+
+    &lt;figure&gt;
+        &lt;figcaption&gt;Fig1. - Trulli, Puglia, Italy.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;h5 class=&quot;keywords-head&quot;&gt;Keywords&lt;/h5&gt;
+    &lt;p class=&quot;write-keyword&quot;&gt;&lt;/p&gt;
   
 &lt;body&gt;
   &lt;/html&gt;</code></pre>
