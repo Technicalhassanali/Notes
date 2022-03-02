@@ -476,6 +476,34 @@ function Divide() {
     document.write("Sum = " + sum);
 &lt;/script&gt;</code></pre>
 
+<div class="heading2">
+	<h3> How to make Table Using For loop?  </h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;div&gt;
+    &lt;label for=&quot;multiply&quot;&gt;Multiply Number&lt;/label&gt; &lt;br /&gt;
+    &lt;input type=&quot;number&quot; id=&quot;startN&quot; /&gt; &lt;br /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;end&quot;&gt;End Number&lt;/label&gt; &lt;br /&gt;
+    &lt;input type=&quot;number&quot; id=&quot;endN&quot; /&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+  &lt;button onclick=&quot;printTable()&quot;&gt;Print Table&lt;/button&gt;
+  &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+  &lt;script&gt;
+  function printTable() {
+  let start = Number(document.getElementById(&quot;startN&quot;).value);
+  let end  =  Number(document.getElementById(&quot;endN&quot;).value);
+  let printvalue = document.getElementById(&quot;result&quot;);
+  
+  for (var i = 1; i &lt;= end; i++) {
+      printvalue.innerHTML += (start + &quot;*&quot; + i + &quot; = &quot;) + (i * start) + &quot;&lt;br&gt;&quot;;
+  }
+  }
+  &lt;/script&gt;</code></pre>
+
+
+
         <!--
 <h5 class="heading1" style="color: white; background-color: red"></h5>
 
