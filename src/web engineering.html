@@ -27,8 +27,8 @@
 		<div id="menu-btn" class="fas fa-bars"></div>
 	</div>
 </header>
-
-    <div class="container">
+<div class="container">
+    
         <h5 class="heading1" style="color: white; background-color: red">HTML</h5>
         <p><strong>HTML</strong> stands for HyperText Markup Language.HTML is the standard markup language for documents
             designed to be displayed in a web browser. </p>
@@ -152,16 +152,16 @@
             class="language-html"><code class="language-html">&lt;font color=&quot;red&quot; face=&quot;Verdana,sans-serif&quot; size=&quot;+1&quot;&gt;Text...&lt;/font&gt;</code></pre>
 
 
+<!-- 
+<h5 class="heading1" style="color: white; background-color: red">Tomcat Path</h5>
+<p>Download the Apache Tomcat Server or other option is Xampp Server</p>
+<div class="heading2">
+    <h3> Set Path </h3>
+</div>
+<p>Paste the zip file on <code class="markcode">C:\</code> drive and extract the folder.After Extract the Folder
+    Set Following Path.</p>
 
-        <h5 class="heading1" style="color: white; background-color: red">Tomcat Path</h5>
-        <p>Download the Apache Tomcat Server or other option is Xampp Server</p>
-        <div class="heading2">
-            <h3> Set Path </h3>
-        </div>
-        <p>Paste the zip file on <code class="markcode">C:\</code> drive and extract the folder.After Extract the Folder
-            Set Following Path.</p>
-
-        <pre class="language-javascript line-numbers" data-line="1,3,5,8"><code class="language-javascript match-braces" >Set the JAVA_HOME variable
+<pre class="language-javascript line-numbers" data-line="1,3,5,8"><code class="language-javascript match-braces" >Set the JAVA_HOME variable
 C:\program Files\java\jdk-17
 Set the CATALINA_HOME variable
 D:\xampp\tomcat
@@ -190,7 +190,7 @@ Test the Server
   &lt;role rolename=&quot;manager-jmx&quot;/&gt;
   &lt;user name=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;admin-gui,admin-script,manager-gui,manager-status,manager-script,manager-jmx&quot;/&gt;
 &lt;/tomcat-users&gt;</code></pre>
-
+ -->
 
 
 
@@ -221,7 +221,6 @@ Test the Server
 </pre>
 
 
-
 <div class="heading2">
     <h3>How to make function?</h3>
 </div>
@@ -240,7 +239,6 @@ let nameOfFunction = () =>{
     //code
 }    
 &lt;/script&gt;</code></pre>
-
 
 
 <div class="heading2">
@@ -263,11 +261,139 @@ let nameOfFunction = () =>{
     &lt;/script&gt;</code></pre>
 
 <div class="heading2">
-    <h3>Get Three Input a,b,c and Apply the add,subtract,multiply and divide two Number.</h3>
+    <h3>Check Enter character is Vowel or Not?</h3>
 </div>
-<pre  class="language-html"><code class="language-html match-braces"> 
-    </code></pre>
-       
+<pre  class="language-html"><code class="language-html match-braces">&lt;label for=&quot;charCheck&quot;&gt;Enter Character :&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;textInput&quot; /&gt;
+&lt;br /&gt;
+&lt;button onclick=&quot;vowelCheck()&quot;&gt;Click to See&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+                                &lt;!-- JavaScript --&gt;
+&lt;script&gt;
+    function vowelCheck() {
+    let txt = document.getElementById(&quot;textInput&quot;).value.toLowerCase();
+    /* toLowerCase() function is help to change the all character that user enter is 
+        in lowercase.The codition will be false on the user
+        the capital letter even letter is vowel */
+        if(txt == 'a' || txt == 'e' || txt == 'i' || txt == 'o' || txt == 'u'){
+            document.getElementById('result').innerHTML = &quot;Vowel Character &quot;+txt;
+        }else{
+            document.getElementById('result').innerHTML = &quot;Not Voewl Charcter &quot;;
+        }
+    }
+&lt;/script&gt;    
+
+                        &lt;!-- Method 02 Using OnInput Event --&gt;
+
+&lt;label for=&quot;charCheck&quot;&gt;Enter Character :&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;textInput&quot; oninput=&quot;vowelCheck()&quot; /&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+                            &lt;!-- JavaScript --&gt;
+&lt;script&gt;
+function vowelCheck() {
+let txt = document.getElementById(&quot;textInput&quot;).value;
+/* It take only first character of your whole string then show the results */
+let text = txt.charAt(0).toLowerCase();
+    if(text == 'a' || text == 'e' || text == 'i' || text == 'o' || text == 'u'){
+        document.getElementById('result').innerHTML = &quot;Vowel Character &quot;+text;
+    }else{
+        document.getElementById('result').innerHTML = &quot;Not Voewl Charcter &quot;;
+    }
+}
+&lt;/script&gt; </code></pre>
+
+
+<div class="heading2">
+    <h3>Get Three Number as Input through User and check What Number is Greater using if-else condition?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;div&gt;
+    &lt;label for=&quot;firstnumber&quot;&gt;First Number :&lt;/label&gt;&lt;br /&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;firstNumber&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;secondnumber&quot;&gt;Second Number :&lt;/label&gt;&lt;br /&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;secondNumber&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;thirdnumber&quot;&gt;Third Number :&lt;/label&gt;&lt;br /&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;thirdNumber&quot; /&gt;
+  &lt;/div&gt;
+  
+  &lt;button onclick=&quot;checkbtn()&quot;&gt;Check&lt;/button&gt;
+  &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+  &lt;script&gt;
+    function checkbtn() {
+      let number1 = parseInt(document.getElementById(&quot;firstNumber&quot;).value);
+      let number2 = parseInt(document.getElementById(&quot;secondNumber&quot;).value);
+      let number3 = parseInt(document.getElementById(&quot;thirdNumber&quot;).value);
+      let reslut = document.getElementById(&quot;result&quot;);
+      if (number1 &gt;= number2 &amp;&amp; number1 &gt;= number3) {
+        result.innerHTML = &quot;Number 1 is greater&quot;;
+      } else if (number2 &gt;= number1 &amp;&amp; number2 &gt;= number3) {
+        result.innerHTML = &quot;Number 2 is greater&quot;;
+      } else {
+        reslut.innerHTML = &quot;Number 3 is Greater&quot;;
+      }
+    }
+  &lt;/script&gt;</code></pre>
+ 
+
+    
+<div class="heading2">
+    <h3>Using for loop Count Value Print 0 to 20</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    let d = document.getElementById('demo');
+    for(var i = 0; i&lt;=20; i++){
+        d.innerHTML += i +&quot; &quot;;
+    }
+&lt;/script&gt;</code></pre>
+ 
+
+
+<div class="heading2">
+    <h3>Using For Loop Print 0 to 20 odd Number ?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    let d = document.getElementById('demo');
+    for(var i = 0; i&lt;=20; i++){
+        if(i%2 == 0 ){
+        }else{
+            d.innerHTML +=i +&quot; &quot;;
+        }
+    }
+&lt;/script&gt;</code></pre>
+    
+
+        
+<div class="heading2">
+    <h3>Print Even Number Using For Loop?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    let d = document.getElementById('demo');
+    for(var i = 0; i&lt;=20; i++){
+        if(i%2 == 0 ){           
+        d.innerHTML +=i +&quot; &quot;;
+        }else{
+        }
+    }
+&lt;/script&gt;</code></pre>
+ 
+
+        
+    <div class="heading2">
+        <h3></h3>
+    </div>
+    <pre  class="language-html"><code class="language-html match-braces"> 
+        </code></pre>
+     
+
+
+
+    <!-- Get Three Input a,b,c and Apply the add,subtract,multiply and divide two Number. -->
         <!--
 <h5 class="heading1" style="color: white; background-color: red"></h5>
 
@@ -292,14 +418,14 @@ let nameOfFunction = () =>{
 
 
     </div>
-    <!--
+    
 
 
     <footer>
         <p>Design By Hassan Ali</p>
     </footer>
 
--->
+
     <script src="../Files/javaScript.js"></script>
     <script src="../Files/prism.js"></script>
     <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
