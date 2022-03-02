@@ -557,6 +557,22 @@ function printTable() {
     }
 &lt;/script&gt;</code></pre>
 
+<div class="heading2">
+	<h3>Multiply odd Value in Using for loop?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;button onclick=&quot;printTable()&quot;&gt;Print Table&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    function printTable() {
+    let printvalue = document.getElementById(&quot;result&quot;);
+    let p = 1;
+    for (var i = 1; i &lt;= 20; i = i + 2) {
+        p = p * i;
+        printvalue.innerHTML += p + &quot;&lt;br&gt;&quot;;
+    }
+    }
+&lt;/script&gt;</code></pre>
+
 
         <!--
 <h5 class="heading1" style="color: white; background-color: red"></h5>
