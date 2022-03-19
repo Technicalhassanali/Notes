@@ -17,6 +17,7 @@ code[class*="language-"], pre[class*="language-"] {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+    
 }
 /* Code blocks */
 
@@ -25,6 +26,9 @@ pre[class*="language-"] {
     margin: 0.5em 0;
     overflow: auto;
     border-radius: 0.3em;
+    box-shadow: inset 0 1px 10px rgb(0 0 0 / 30%), 0 1px 0 rgb(255 255 255 / 10%), 0 -1px 0 rgb(0 0 0 / 50%);
+    /* -webkit-box-shadow: inset 0 1px 10px rgb(0 0 0 / 30%), 0 1px 0 rgb(255 255 255 / 10%), 0 -1px 0 rgb(0 0 0 / 50%);
+    -moz-box-shadow: inset 0 1px 10px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.1),0 -1px 0 rgba(0,0,0,0.5); */
 }
 :not(pre)>code[class*="language-"], pre[class*="language-"] {
     background: #272822;

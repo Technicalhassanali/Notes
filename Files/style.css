@@ -150,10 +150,17 @@ header #menu-btn {
 .content {
   font-size: 2.5rem;
 }
+body{
+  /* background-color: #333; */
+}
 .container {
-  width: 70%;
+  width: 75%;
   overflow: hidden;
   margin: 2rem auto;
+  /* background-color: #444;
+  padding:46px;
+  border-radius:10px;
+  color:white; */
 }
 
 .green {
@@ -244,9 +251,9 @@ img.white-filter {
   width: 100%;
   font-size: 1.9rem;
   border-radius: 1rem;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -0.1rem,
-    rgba(255, 255, 255, 0.08) 0px 0.1rem 0px inset;
+    rgba(255, 255, 255, 0.08) 0px 0.1rem 0px inset; */
   font-family: consolas;
   color: white;
 }
