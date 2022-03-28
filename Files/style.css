@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Open+Sans:ital,wght@0,400;1,300&family=Recursive:wght@300&display=swap');
 * {
   margin: 0;
-  padding: 0;
+  /*padding: 0;*/
   text-decoration: none;
   box-sizing: border-box;
 }
