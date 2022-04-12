@@ -10,7 +10,11 @@
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<style>
 		body {
-			background-color: hsl(0, 0%, 98%);
+			/*background-color: hsl(0, 0%, 98%);*/
+		}
+		mark{
+			padding: 1px;
+    		border: 1px solid green;
 		}
 	</style>
 </head>
@@ -79,9 +83,6 @@
 		<h3>How to make Apk File?</h3>
 	</div>
 <p>In Android Studio the <code class="markcode">build > Build bundle /Apk</code> option on the topbar is used to built the apk file.</p>
-
-<hr>
-
 
 	<div class="heading2">
 		<h3>Android Studio Project Folder Details</h3>
@@ -192,32 +193,104 @@ ________________________________________________________
 <p><code class="markcode">string.xml</code> file is used to store the text that used in the app in multiple time.If we change the text then we don't go to change the text from all over app.Only the string.xml file open then change the text.It would change the text that used most in app. e.g app name,app about us.</p>
 
 	<p class="folderStyle"><strong>themes</strong></p>
-<p>themes folder is contain theme file that used in the application.</p>\
+<p>themes folder is contain theme file that used in the application.</p>
 
+
+	<div class="heading2">
+		<h3>Introduction to XML</h3>
+	</div>
+<p>XML (Extnsible Markup Language). <br>
+<strong>Language :</strong> Set of Instructions that process on the runtime,that is the reason we used Language <br>
+<strong>Markup :</strong> mean changing or formatting the text <br>
+</p>
+<br>
+<ol type="1">
+	<li>It is used for storing and transferring data. </li>
+	<li>It is a markup language much like HTML but in html the tag is predefined,xml user define tag himselft.The tag define user himself we says the language is extensible. </li>
+	<li>Unlike HTML, XML is <b>case-sensitive</b>, requires each tag is closed properly, and preserves whitespace.</li> 
+	<li>XML Tags need not to be predefined like HTML known as extensible).</li>
+	<li>A markup language is a language that annotates text so that the computer can manipulate that text.</li>
+	<li>Most markup languages are human-readable because the annotations are written in a way to distinguish them from the text itself.</li>
+</ol>
+
+
+<p class="folderStyle"><strong>XML in Android</strong></p>
+
+<ul>
+<li>We create XML <mark>layouts</mark> in Android, and later alter them using Java logic.</li>
+<li><mark>Resources</mark> are the additional files and static content an application needs, such as animations, color schemes,layouts, menu layouts.</li>
+<li>Each layout file must contain one (and only one!) <mark>root</mark>
+element(tags).</li>
+</ul>
+
+
+
+	<p class="folderStyle"><strong>VIEWS</strong></p>
+<ul>
+	<li>It represents a rectangular area of the screen, and is
+responsible for <mark>displaying information or content</mark>, and
+event handling.</li>
+<li>Text, images, and buttons are allI Views in Android.</li>
+</ul>
+<p>View is a basic building block of UI (User Interface) in android. A view is a small rectangular box that responds to user inputs. Eg: EditText, Button, CheckBox, etc. ViewGroup is an invisible container of other views (child views) and other ViewGroup.</p>
+
+
+	<p class="folderStyle"><strong>VIEW GROUP</strong></p>
+<p>It is essentially an <mark>'invisible container'</mark> that holds multiple
+Views or ViewGroups together, and defines their layout
+properties.</p>
+
+<p><strong>Common View Groups</strong></p>
+<ul>
+<li>A <mark>List View</mark> displays a list of scrollable items.</li>
+<li>A <mark>Grid View</mark> displays items in a two-dimensional scrollable grid.</li>
+<li>A <mark>Table Layout groups</mark> views into rows and colum.</li>
+</ul>
+
+
+	<p class="folderStyle"><strong>ROOT VIEWS</strong></p>
+	<p>It is Root Element of XML Layout file.In starting you take the root tag/element then you can add the code within the root tag/element.</p>
+
+	<p><strong>Common View Groups</strong></p>
+	<ul>
+<li>A <mark>Linear Layout</mark> aligns its contents into a single direction, whether vertical or horizontal.</li>
+<li>A <mark>Relative Layout</mark> displays its child content in positions relative to the parent.(Relation b/w Layout)</li>
+<li>A <mark>Frame Layout</mark> is a placeholder on a screen thae display only a single view (Fragments)</li>
+</ul>
+
+	<div class="heading2">
+		<h3>Android UI Design (XML Layout)</h3>
+	</div>
+<p>Two ways we design the layout in the android studio;</p>
+<ol type="1">
+	<li>Create Layout Using Front Drag/Drop Method</li>
+	<li>Create Layout Using Coding in XML File</li>
+</ol>
 <!-- 
 	<div class="Short-head">
 		<h3></h3>
 	</div>
- -->
-	<br>
-	<br>
-	<!--
+
 	<h1 class="heading1" style="background-color: red;"> </h1>
 	<div class="heading2">
 		<h3></h3>
 	</div>
 	<p class="folderStyle"><strong></strong></p>
-	<pre class="language-html"><code class="language-html">
-	</code></pre>
-	<ul>
-		<li></li>
-	</ul>
+<pre class="language-html"><code class="language-html"></code></pre>
 	-->
+
+		<br>
+	<br>
 </div>
 </div>
 	 	<footer>
 			<p>Design By Hassan Ali</p>
 		</footer> 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+<i class="fas fa-arrow-circle-up"></i>
+</button>
+
 	<script src="../Files/prism.js"></script>
 	<script src="../Files/javaScript.js"></script>
 	<script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
