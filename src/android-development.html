@@ -27,34 +27,197 @@
 		<div id="menu-btn" class="fas fa-bars"></div>
 	</div>
 </header>
+
 <button class="software-btn" onclick="topFunction()" id="myBtn" title="Go to top">
 <i class="fas fa-arrow-circle-up"></i>
 </button>
+
 <div class="container">
 
-	
+<div class="heading2">
+	<h3>What is ADB &amp; AVD?</h3>
+</div>
+<p>When we create the Android App.Then main steps is to test the android app that work correctly function or not,that user end not show the UI Problem.The testing is necessary to remove the bugs from the app.The Bugs is problem in the android app. </p>
+<div class="Short-head">
+	<h3>Types of Error</h3>
+</div>
+<p>
+	Two types of Error; 
+</p>
+	<ol type="1">
+		<li>compile time error</li>
+		<li>Run time error</li>
+	</ol>
+	<p><strong>Compile time Error :</strong>A compile-time error generally refers to the errors that correspond to the semantics or syntax. </p>
+	<p><strong>Run time Error :</strong> A runtime error refers to the error that we encounter during the code execution during runtime.</p>
+<p><strong>ADB : </strong> ADB(Android Debug Bridge) : Android Real Device using USB to install APP and test the App</p>
+<p><strong>AVD :</strong> AVD(Android Virtual Device) : Android Virtual Device is created with different size and test/debug/check UI of the APP.</p>
+
+	<div class="heading2">
+		<h3>What is APK?</h3>
+	</div>
+
+<ul>
+<li>It is a Package file format used by Android Operating system for distribution and installation of Mobile app</li>
+<li>It means Android Application Package.</li>
+<li>Similar to executable file .exe in Windows Operating System.</li>
+<li>The extension of Apk file is .apk.</li>
+<li>It is installed on Android Operating System.</li>
+</ul>
+<p><b>It consists of</b> <br>
+	<ol>
+<li>Application code(.dex files)</li>
+<li>Manifest file</li>
+<li>Assets</li>
+<li>Resource files</li>
+	</ol>
+</p>
+
+<p><strong>Example:</strong> It just like a zip(winrar) file that collection of multiple file make and show one file.</p>
+
+	<div class="Short-head">
+		<h3>How to make Apk File?</h3>
+	</div>
+<p>In Android Studio the <code class="markcode">build > Build bundle /Apk</code> option on the topbar is used to built the apk file.</p>
+
+<hr>
+
+
+	<div class="heading2">
+		<h3>Android Studio Project Folder Details</h3>
+	</div>
+	<div class="Short-head">
+		<h3>Manifest</h3>
+	</div>
+	<p>Manifest is the like control room of any application.By using Manifest we do these things;</p>
+	<ul>
+		<li>App Name(Change)</li>
+		<li>Icon (Change)</li>
+		<li>Activity(Add)</li>
+		<li>Theme (Name Add)</li>
+		<li>Package (Add)</li>
+		<li>User Permission (camera,storage,cotact,location etc)</li>
+<pre class="language-html"><code class="language-html">&lt;uses-permission android:name=&quot;android.permission.Internet&quot;/&gt;</code></pre>
+	</ul>
+
+	<div class="Short-head">
+		<h3>Java</h3>
+	</div>	
+	<p>It has three sub-folders.</p>
+	<p>First folder contain the java main file.Then the other two folder contain test file that used in the testing purpose(unit testing,monkey testing,,J testing,automated testing) purpose.</p>
+
+	<div class="Short-head">
+		<h3>Java(generated)</h3>
+	</div>
+	<p>In this folder the file is used in the run time of the application.All the file check on the run time.</p>
+
+	<div class="Short-head">
+		<h3>res</h3>
+	</div>
+<p><code class="markcode">res</code> folder is the Resource folder that contain the UI Files.In res the multiple folder are present.</p>
+
+<ol type="1">
+	<li>drawable</li>
+	<li>Layout</li>
+	<li>mipmap</li>
+	<li>values</li>
+	<ul>
+		<li>themes</li>
+	</ul>
+</ol>
+
+<p class="folderStyle"><strong>Rules of <code class="markcode">res(Resource)</code> Folder:</strong></p>
+<p>When you creating the files in the res(Resource) Folder then you can follow these steps;</p>
+	<ul>
+		<li>File Name not starting with Number.</li>
+		<li>Not use Special Character in the File,only underscore(_) is used.</li>
+		<li>File Name not add space,if you use space then you add underscore exept space.</li>
+	</ul>
+<p>If you not follow the above condition when creating the file in res(Resource) Folder then the not identify the file in runtime.</p>
+
+<p class="folderStyle"><strong>Drawable (Folder)</strong></p>
+<p>In this folder we can add the images.You can add the image in the drwable folder by copy/past,ctrl+c/ctrl+v, and right click on the drwable folder then click "new" then select "images" that are the svg images.vector images is used only the svg image,other images .png ,.jpg is easily add through copy/past,ctrl+c/ctrl+v,drag/drop way.</p>
+<div class="success size">
+<p><i class="fas fa-check-circle" aria-hidden="true"></i> <strong> Note: </strong> <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) JPG/JPEG<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) PNG (Transparent)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) SVG <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4) XML(Custome Created Images using Coding) <br>
+	Images only used in the Drawable folder.
+</p>
+</div>
+
+<p class="folderStyle"><strong>Layout</strong></p>
+<ul>
+	<li>UI</li>
+	<li>Activity</li>
+	<li>Java (XML file)</li>
+</ul>
+
+<p class="folderStyle"><strong>mipmap</strong></p>
+<p>Used for icon.By default the same icon is show on the different size if the application used in large and samall phone the icon is according to set.Then this procwss is very time consuming,used svg (vector images) SVG Images that set(zoom) according to the screen.</p>
+
+<p class="folderStyle"><strong>values</strong></p>
+<p>The values folder is contain two files; (1) color.xml (2) strings.xml</p>
+
+<p><code class="markcode"><strong>color.xml</strong></code> : is used to define the color in xml file.if you have used the color in application 5 time then if we changed to color you not need to change the color from 5 places.Only one place you can go and change the password according to the preference.</p>
+<p>two way define color in the color.xml file.</p>
+<div class="success size">
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) RGB      (3 Color Variation)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) RRGGBB   (6 Color Variaton)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) ABRRGGBB (AB is Transparent color)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R = Red; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G = Green; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = Blue; <br>
+	If we used 0 then it mean no value and if used FF then mean transparent color. 1 mean color value that we used (0-9) then the character is used.
+</p>
+</div>
+<p>color are defined in the hexadecimal (0-15) form value. </p>
+<p><strong>Examples:</strong></p>
+
+<pre class="language-css"><code class="language-css">#RGB;                       
+#F00; (Red)                 
+#0F0; (Green)
+________________________________________________________               
+#RRGGBB;                    
+#FF0000; (Red)    
+________________________________________________________   	          
+#ABRRGGBB;                  
+#FF010000; (Red Transparent)
+</code></pre>
+
+<br>
+
+<p><code class="markcode">string.xml</code> file is used to store the text that used in the app in multiple time.If we change the text then we don't go to change the text from all over app.Only the string.xml file open then change the text.It would change the text that used most in app. e.g app name,app about us.</p>
+
+	<p class="folderStyle"><strong>themes</strong></p>
+<p>themes folder is contain theme file that used in the application.</p>\
+
+<!-- 
+	<div class="Short-head">
+		<h3></h3>
+	</div>
+ -->
+	<br>
+	<br>
 	<!--
 	<h1 class="heading1" style="background-color: red;"> </h1>
 	<div class="heading2">
 		<h3></h3>
 	</div>
-	<pre class="language-css"><code class="language-css">
+	<p class="folderStyle"><strong></strong></p>
+	<pre class="language-html"><code class="language-html">
 	</code></pre>
 	<ul>
 		<li></li>
 	</ul>
-	<div class="success size">
-		<p><strong> 01 </strong><i class="fas fa-external-link-alt fa-x"></i></p>
-		<p><strong> 02 </strong><i class="fas fa-external-link-alt fa-x"></i></p>
-		<p><strong> 03 </strong><i class="fas fa-external-link-alt fa-x"></i></p>
-		<p><strong> 04 </strong><i class="fas fa-external-link-alt fa-x"></i></p>
-	</div>
 	-->
 </div>
 </div>
-	<!-- 	<footer>
+	 	<footer>
 			<p>Design By Hassan Ali</p>
-		</footer> -->
+		</footer> 
 	<script src="../Files/prism.js"></script>
 	<script src="../Files/javaScript.js"></script>
 	<script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
