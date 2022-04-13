@@ -298,6 +298,22 @@ different features compared to android textview, an
 namespace helps to distinguish between our custome
 textview widget and android textview widget.</li>
 </ul>
+
+	<p class="folderStyle"><strong>Important Attribute</strong></p>
+<ul>
+<li>android:id</li>
+<li>android:layout_width (required)</li>
+<li>android:layout_height (required)</li>
+<li>android:text</li>
+</ul>
+<p class="folderStyle"><strong>LayoutParams</strong></p>
+<p>In root we used mostly <code class="markcode">match_parent</code> b/c we need whole screen width/height of the app.</p>
+<p><mark><strong>wrap_content :</strong></mark> Space provide view that they need.It depend on the requirement of the content in the views if content is large then view size become large. e.g if text "Hello world" is place then the width and hight provide according to content.You not specify the <code class="markcode">wrap_content </code> in the root element b/c you need whole screen.</p>
+<p><mark><strong>Fixed Size :</strong></mark> mean the size define that the not changed.Mostly used <code class="markcode">dp</code>(density pixels) is used.</p>
+<pre class="language-xml"><code class="language-xml">android:layout_width =&quot;match_parent |  wrap_content| 100dp&quot;
+android:layout_height=&quot;match_parent |  wrap_content| 100dp&quot;</code></pre>
+
+
 <!-- 
 	<div class="Short-head">
 		<h3></h3>
