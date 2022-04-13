@@ -266,6 +266,38 @@ properties.</p>
 	<li>Create Layout Using Front Drag/Drop Method</li>
 	<li>Create Layout Using Coding in XML File</li>
 </ol>
+
+
+	<p class="folderStyle"><strong>XML Layout Using Coding</strong></p>
+<pre class="language-xml"><code class="language-xml">&lt;?xml version="1.0" encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout  
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+&lt;/RelativeLayout&gt;</code></pre>
+
+	<p class="folderStyle"><strong>What is xmlns? (namespace URl)</strong></p>
+	<ul type="desc">
+<li>Uniform Resource Indicator(URl)</li>
+<li>In computing, it is a string of characters used to identify a name of a resource.</li>
+<li>Such identification enables interaction with representations of the resource over a network, type the World Wide Web, using specific protocols.</li>
+	</ul>
+<p><strong>Structure</strong></p>
+
+<pre class="language-xml"><code class="language-xml">xmlns:prefix=&quot;URI&quot; &lt;!--Syntax--&gt;</code></pre>
+
+	<p class="folderStyle"><strong>URL Namespace</strong></p>
+<ul>
+<li>XML namespaces are used for providing uniquely name elements and attributes in an XML document.</li>
+<li>xmins:android describes the android namespace.</li>
+<li>Also suppose we <mark>write our own textview widget</mark> with
+different features compared to android textview, an
+namespace helps to distinguish between our custome
+textview widget and android textview widget.</li>
+</ul>
 <!-- 
 	<div class="Short-head">
 		<h3></h3>
@@ -276,7 +308,7 @@ properties.</p>
 		<h3></h3>
 	</div>
 	<p class="folderStyle"><strong></strong></p>
-<pre class="language-html"><code class="language-html"></code></pre>
+<pre class="language-xml"><code class="language-xml"></code></pre>
 	-->
 
 		<br>
