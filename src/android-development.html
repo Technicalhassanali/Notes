@@ -12,6 +12,9 @@
 		body {
 			/*background-color: hsl(0, 0%, 98%);*/
 		}
+		.smooth-link{
+			position: fixed;
+		}
 		mark{
 			padding: 1px;
     		border: 1px solid green;
@@ -196,7 +199,7 @@ ________________________________________________________
 <p>themes folder is contain theme file that used in the application.</p>
 
 
-	<div class="heading2">
+	<div class="heading2 smooth-link" id="hello">
 		<h3>Introduction to XML</h3>
 	</div>
 <p>XML (Extnsible Markup Language). <br>
@@ -312,6 +315,55 @@ textview widget and android textview widget.</li>
 <p><mark><strong>Fixed Size :</strong></mark> mean the size define that the not changed.Mostly used <code class="markcode">dp</code>(density pixels) is used.</p>
 <pre class="language-xml"><code class="language-xml">android:layout_width =&quot;match_parent |  wrap_content| 100dp&quot;
 android:layout_height=&quot;match_parent |  wrap_content| 100dp&quot;</code></pre>
+
+
+	<div class="heading2">
+		<h3>AndroidManifest.xml</h3>
+	</div>
+<p>
+The manifest file describes essential information (like how application interact) about your app to the android build tools, the Android Operating System and Google Play.<br>
+The manifest file is required to declare the following;
+</p>
+<ol type="1">
+	<li>Component of App (Activities, Services, broadcast receivers & Content Providers)</li>
+	<li>Permission (Camera, SMS, Internet Access, Contacts)</li>
+	<li>Hardware and Software</li>
+</ol>
+
+	<div class="Short-head">
+		<h3>Component of Application:</h3>
+	</div>
+<ul>
+	<li>Activities (Screen)</li>
+	<li>Services (Background Process directly or indirectly handle)</li>
+	<li>Broadcast Receivers (communication b/w android application & android system and also check app compatibility)</li>
+	<li>Content Providers (Data & Database Management Issues handled)</li>
+</ul>
+	<div class="Short-head">
+		<h3>2.Permission (Camera, SMS, Internet Access, Contacts)</h3>
+	</div>
+<p>
+Each permission is identified by a unique label.
+</p>
+<pre class="language-xml"><code class="language-xml">&lt;manifest ... &gt;
+    &lt;uses-permission android:name="android.permission.SEND_SMS"/&gt;
+    ...
+&lt;/manifest&gt;</code></pre>
+
+	<div class="Short-head">
+		<h3>3.Hardware and Software Features</h3>
+	</div>
+<p>
+The manifest file is also where you can declare what types of hardware or software features your app requires, and thus, which types of devices your app is compatible with. Google Play Store does not allow your app to be installed on devices that don't provide the features or system version that your app requires.
+</p>
+<pre class="language-xml"><code class="language-xml">&lt;uses-feature&gt;</code></pre>
+<p>The <code class="markcode">&lt;uses-feature&gt;</code> element allows you to declare hardware and software features your app needs. For example, if your app cannot achieve basic functionality on a device without a compass sensor, you can declare the compass sensor as required with the following manifest tag:</p>
+<pre class="language-xml"><code class="language-xml">&lt;manifest ... &gt;
+    &lt;uses-feature android:name="android.hardware.sensor.compass"
+     android:required="true" /&gt;
+    ...
+&lt;/manifest&gt;</code></pre>
+
 
 
 <!-- 
